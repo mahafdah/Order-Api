@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-api-deployment
+  labels:
+    app: order-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order-api
+  template:
+    metadata:
+      labels:
+        app: order-api
+    spec:
+      containers:
+      - name: order-api
+        image: mahafdah/order-api:1.2
+        ports:
+        - containerPort: 80
+        env:
+         - name: ConnectionStrings__Default
+           value: Password=P@ssw0rd;Persist Security Info=True;User ID=sa;Initial Catalog=Orders;Data Source=mssql-service
