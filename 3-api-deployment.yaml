@@ -22,6 +22,9 @@ spec:
         env:
          - name: ConnectionStrings__Default
            valueFrom:
-              configMapKeyRef:
-                 name: database-connection-string
-                 key: mssql-connection-string-configmap 
+              secretKeyRef:
+                 name: mssql-secret
+                 key: database-connection-string-secret
+              #configMapKeyRef:
+              #   name: database-connection-string
+              #   key: mssql-connection-string-configmap 
