@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mssql-connection-string-configmap 
+data:
+  database-connection-string: Password=P@ssw0rd;Persist Security Info=True;User ID=sa;Initial Catalog=Orders;Data Source=mssql-service

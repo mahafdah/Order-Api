@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order", "Order\Order.csproj", "{AA0C4EF4-9943-4461-B173-C71021778A7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order", "Order\Order.csproj", "{AA0C4EF4-9943-4461-B173-C71021778A7C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{1E72F129-B910-4B28-8C5C-54F0516E02F1}"
 	ProjectSection(SolutionItems) = preProject
 		1-mssql-deployment.yaml = 1-mssql-deployment.yaml
 		2-mssql-service.yaml = 2-mssql-service.yaml
 		3-api-deployment.yaml = 3-api-deployment.yaml
+		4-mssql-pv.yaml = 4-mssql-pv.yaml
+		5-configmap.yaml = 5-configmap.yaml
 	EndProjectSection
 EndProject
 Global
