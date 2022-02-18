@@ -7,12 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order", "Order\Order.csproj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{1E72F129-B910-4B28-8C5C-54F0516E02F1}"
 	ProjectSection(SolutionItems) = preProject
-		1-mssql-deployment.yaml = 1-mssql-deployment.yaml
-		2-mssql-service.yaml = 2-mssql-service.yaml
-		3-api-deployment.yaml = 3-api-deployment.yaml
-		4-mssql-pv.yaml = 4-mssql-pv.yaml
-		5-configmap.yaml = 5-configmap.yaml
-		6-mssql-secret.yaml = 6-mssql-secret.yaml
+		1-mssql-pv-azure.yaml = 1-mssql-pv-azure.yaml
+		2-mssql-secret.yaml = 2-mssql-secret.yaml
+		3-mssql-deployment.yaml = 3-mssql-deployment.yaml
+		4-mssql-service.yaml = 4-mssql-service.yaml
+		5-api-deployment.yaml = 5-api-deployment.yaml
 	EndProjectSection
 EndProject
 Global

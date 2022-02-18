@@ -25,6 +25,16 @@ spec:
               secretKeyRef:
                  name: mssql-secret
                  key: database-connection-string-secret
-              #configMapKeyRef:
-              #   name: database-connection-string
-              #   key: mssql-connection-string-configmap 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-api-service
+spec:
+  selector:
+    app: order-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
