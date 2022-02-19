@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: order-api
-        image: mahafdah/order-api:1.2
+        image: mahafdah/order-api:v1.#{Build.BuildId}#
+        #image: mahafdah/order-api:1.2
         ports:
         - containerPort: 80
         env:
