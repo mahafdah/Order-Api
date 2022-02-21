@@ -19,7 +19,8 @@ spec:
         fsGroup: 1000
       containers:
       - name: mssql
-        image: {{ .Values.sql.image.dockerHubId }}/{{ .Values.sql.image.name }}:{{ .Values.sql.image.tag }}
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        # {{ .Values.sql.image.dockerHubId }}/{{ .Values.sql.image.name }}:{{ .Values.sql.image.tag }}
         ports:
         - containerPort: {{ .Values.sql.port }}
         env:
