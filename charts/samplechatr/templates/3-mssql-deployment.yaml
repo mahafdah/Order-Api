@@ -19,8 +19,7 @@ spec:
         fsGroup: 1000
       containers:
       - name: mssql
-        image: mahafdah/order-api:v1.#{Build.BuildId}#
-        # {{ .Values.sql.image.dockerHubId }}/{{ .Values.sql.image.name }}:{{ .Values.sql.image.tag }}
+        image: {{ .Values.sql.image.dockerHubId }}/{{ .Values.sql.image.name }}:{{ .Values.sql.image.tag }}
         ports:
         - containerPort: {{ .Values.sql.port }}
         env:
