@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: mssql-connection-configmap
   namespace: {{ .Values.namespace }}
-  labels:
-    app: mvc
+  # labels:
+    # app: mvc
 data:
   db-connection-string: Server=mssql-service-helm;Database=ProdcutsDB;User=SA;Password=@Aa123456;
