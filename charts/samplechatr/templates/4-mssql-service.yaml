@@ -14,12 +14,13 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mssql-service
+  namespace: {{ .Values.namespace }}
 spec:
   selector:
     app: mssql
   ports:
     - protocol: TCP
-      port: 1433
-      targetPort: 1433
+      port: {{ .Values.sql.port }}
+      targetPort: {{ .Values.sql.port }}
       nodePort: 30001
   type: NodePort

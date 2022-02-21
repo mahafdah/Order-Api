@@ -1,11 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: order-api-deployment
+  name: order-api-deployment-helm
+  namespace: {{ .Values.namespace }}
   labels:
     app: order-api
 spec:
-  replicas: 1
+  replicas: {{ .Values.web.image.replicaCount }}
   selector:
     matchLabels:
       app: order-api
@@ -16,10 +17,10 @@ spec:
     spec:
       containers:
       - name: order-api
-        image: mahafdah/order-api:v1.#{Build.BuildId}#
+        image: {{ .Values.web.image.dockerHubId }}/{{ .Values.web.image.name }}:{{ .Values.web.image.tag }}
         #image: mahafdah/order-api:1.2
         ports:
-        - containerPort: 80
+        - containerPort:  {{ .Values.web.port }}
         env:
          - name: ConnectionStrings__Default
            valueFrom:
@@ -31,11 +32,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: order-api-service
+  namespace: {{ .Values.namespace }}
 spec:
   selector:
     app: order-api
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
+      port: {{ .Values.web.port }}
+      targetPort: {{ .Values.web.port }}
   type: LoadBalancer
