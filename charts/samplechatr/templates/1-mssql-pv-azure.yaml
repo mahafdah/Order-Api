@@ -14,16 +14,16 @@ mountOptions:
   - actimeo=30
 parameters:
   skuName: Standard_LRS
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: mssql-pv-claim
-  namespace: {{ .Values.namespace }}
-spec:
-  accessModes:
-    - ReadWriteMany
-  storageClassName: order-api-azure-disk
-  resources:
-    requests:
-      storage: 1Gi
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: mssql-pv-claim
+#   namespace: {{ .Values.namespace }}
+# spec:
+#   accessModes:
+#     - ReadWriteMany
+#   storageClassName: order-api-azure-disk
+#   resources:
+#     requests:
+#       storage: 1Gi
