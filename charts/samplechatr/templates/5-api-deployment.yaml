@@ -17,7 +17,8 @@ spec:
     spec:
       containers:
       - name: order-api
-        image: {{ .Values.web.image.dockerHubId }}/{{ .Values.web.image.name }}:{{ .Values.web.image.tag }}
+        image: mahafdah/order-api:v1.21
+        # {{ .Values.web.image.dockerHubId }}/{{ .Values.web.image.name }}:{{ .Values.web.image.tag }}
         #image: mahafdah/order-api:1.2
         ports:
         - containerPort:  {{ .Values.web.port }}
